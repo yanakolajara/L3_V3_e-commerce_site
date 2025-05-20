@@ -2,11 +2,14 @@ import React from 'react';
 import { Cta } from '../Cta/Cta';
 import { VscSearch } from 'react-icons/vsc';
 import './Navbar.css';
+import logo from '../../assets/ReverbLogo.svg';
 
 export function Navbar() {
   return (
     <nav className='navbar'>
-      <div className='navbar-logo'>Reverb</div>
+      <div className='navbar-logo'>
+        <img src={logo} alt='Reverb Logo' />
+      </div>
       <div className='navbar-searchbar'>
         <form className='navbar-searchbar__form'>
           <input
