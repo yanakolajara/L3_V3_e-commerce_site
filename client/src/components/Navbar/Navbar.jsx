@@ -6,8 +6,11 @@ import { LuShoppingCart } from 'react-icons/lu';
 
 import './Navbar.css';
 import logo from '../../assets/ReverbLogo.svg';
+import { useModal } from '../../providers/modalProvider';
+import Auth from '../Auth/Auth';
 
 export function Navbar() {
+  const { openModal } = useModal();
   return (
     <nav className='navbar'>
       <div className='navbar-logo'>
@@ -62,9 +65,10 @@ export function Navbar() {
         <Cta href='/signup' size='sm'>
           Sign Up
         </Cta>
-        <Cta href='/login' size='sm'>
+        <button size='sm' onClick={openModal}>
           Log In
-        </Cta>
+        </button>
+        <Auth />
       </div>
     </nav>
   );
