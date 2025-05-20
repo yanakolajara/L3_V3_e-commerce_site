@@ -1,0 +1,40 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 5vw;
+  gap: 20px;
+}
+
+.navbar-logo {
+}
+
+.navbar-searchbar {
+  height: 28%;
+  flex: 1;
+}
+
+.navbar-searchbar__form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(0, 0, 0, 0.9);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.navbar-searchbar__input {
+  border: none;
+
+  flex: 1;
+}
+
+.navbar-options {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
