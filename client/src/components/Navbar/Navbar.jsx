@@ -1,5 +1,6 @@
 import React from 'react';
 import { Cta } from '../Cta/Cta';
+import { VscSearch } from 'react-icons/vsc';
 import './Navbar.css';
 
 export function Navbar() {
@@ -13,7 +14,7 @@ export function Navbar() {
             type='text'
             placeholder='Shop for used & new music gear...'
           />
-          <input type='submit' />
+          <VscSearch className='navbar-searchbar__icon' />
         </form>
       </div>
       <div className='navbar-options'>
