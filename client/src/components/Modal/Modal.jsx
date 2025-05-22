@@ -17,7 +17,6 @@ const Modal = ({ children }) => {
                 onClick={closeModal}
               />
             </div>
-
             {children}
           </div>
         </div>

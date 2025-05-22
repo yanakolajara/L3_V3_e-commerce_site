@@ -21,14 +21,14 @@
 export const Cta = ({
   className,
   children,
-  iconPosition = 'left',
+  iconPosition,
   border = false,
-  borderColor = 'black',
-  borderWidth = '1px',
-  borderRadius = '5px',
-  size = 'md',
-  color = 'black',
-  backgroundColor = 'transparent',
+  borderColor,
+  borderWidth,
+  borderRadius,
+  size,
+  color,
+  backgroundColor,
   onClick,
   href,
   renderIcon,
@@ -45,7 +45,7 @@ export const Cta = ({
   };
   if (href) {
     return (
-      <a className={className} href={href} style={style} {...props}>
+      <a href={href} style={style} className={className} {...props}>
         {iconPosition === 'left' && renderIcon}
         {children}
         {iconPosition === 'right' && renderIcon}
@@ -54,10 +54,10 @@ export const Cta = ({
   }
   return (
     <button
-      className={className}
       onClick={onClick}
       href={href}
       style={style}
+      className={className}
       {...props}
     >
       {iconPosition === 'left' && renderIcon}

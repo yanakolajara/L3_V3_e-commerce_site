@@ -45,3 +45,11 @@
   justify-content: space-between;
   gap: 4px;
 }
+
+.navbar-options__sign-up {
+  background-color: none;
+}
+
+.navbar-options__log-in {
+  background-color: none;
+}
