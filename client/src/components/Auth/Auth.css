@@ -1,6 +1,6 @@
 .auth-modal {
   width: 540px;
-  height: 635px;
+  min-height: 635px;
   border-radius: 15px;
 }
 
@@ -34,5 +34,46 @@
 }
 
 .auth-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 20px;
+}
+
+.auth-body form {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.auth-body form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+
+.auth-body form input[type='email'],
+.auth-body form input[type='password'],
+.auth-body form input[type='text'] {
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 6px;
+  padding: 15px;
+  flex: 1;
+}
+
+.auth-body form input[type='submit'] {
+  background-color: #212121;
+  color: white;
+  border: 0;
+  border-radius: 25px;
+  padding: 15px;
+  font-size: large;
+  font-weight: bold;
+}
+
+.auth-body form input[type='submit']:hover {
+  background-color: #000000;
 }

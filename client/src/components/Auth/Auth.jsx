@@ -29,10 +29,13 @@ export default function Auth({ isLogin, setIsLogin }) {
             </button>
           </section>
           <section className='auth-body'>
-            <h2>{isLogin ? 'Log In' : 'Sign Up'}</h2>
+            <h2 className='auth-title'>
+              {isLogin ? 'Log In to Reverb' : 'Create a Reverb Account'}
+            </h2>
             {isLogin ? (
               <form>
                 <label htmlFor='email'>
+                  Email
                   <input
                     type='email'
                     name='email'
@@ -41,16 +44,12 @@ export default function Auth({ isLogin, setIsLogin }) {
                   />
                 </label>
                 <label htmlFor='password'>
+                  Password
                   <input
                     type='password'
                     name='password'
                     id='password'
                     placeholder='Password'
-                  />
-                  <input
-                    type='checkbox'
-                    name='showPassword'
-                    id='showPassword'
                   />
                 </label>
                 <input type='submit' value='Log In' />
@@ -62,6 +61,7 @@ export default function Auth({ isLogin, setIsLogin }) {
             ) : (
               <form>
                 <label htmlFor='firstName'>
+                  First Name
                   <input
                     type='text'
                     name='firstName'
