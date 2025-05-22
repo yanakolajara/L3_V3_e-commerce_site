@@ -1,5 +1,5 @@
 .modal__background {
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7);
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -24,11 +24,14 @@
   width: fit-content;
   height: fit-content;
   border-radius: 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
 }
 
 .modal__controls {
   display: flex;
-
   position: absolute;
   right: 0;
   padding: 0px 10px;

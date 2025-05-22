@@ -1,6 +1,9 @@
 import React from 'react';
 import Modal from '../Modal/Modal';
 import { useModal } from '../../providers/modalProvider';
+import { FaFacebook } from 'react-icons/fa';
+import { SiApple } from 'react-icons/si';
+import GoogleIcon from '../../assets/google-icon.png';
 import './Auth.css';
 
 export default function Auth({ isLogin, setIsLogin }) {
@@ -33,24 +36,14 @@ export default function Auth({ isLogin, setIsLogin }) {
               {isLogin ? 'Log In to Reverb' : 'Create a Reverb Account'}
             </h2>
             {isLogin ? (
-              <form>
+              <form className='auth-form'>
                 <label htmlFor='email'>
                   Email
-                  <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    placeholder='Email'
-                  />
+                  <input type='email' name='email' id='email' />
                 </label>
                 <label htmlFor='password'>
                   Password
-                  <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='Password'
-                  />
+                  <input type='password' name='password' id='password' />
                 </label>
                 <input type='submit' value='Log In' />
                 <div className='checkbox'>
@@ -59,74 +52,55 @@ export default function Auth({ isLogin, setIsLogin }) {
                 </div>
               </form>
             ) : (
-              <form>
-                <label htmlFor='firstName'>
-                  First Name
-                  <input
-                    type='text'
-                    name='firstName'
-                    id='firstName'
-                    placeholder='First Name'
-                  />
-                </label>
-                <label htmlFor='lastName'>
-                  <input
-                    type='text'
-                    name='lastName'
-                    id='lastName'
-                    placeholder='Last Name'
-                  />
-                </label>
+              <form className='auth-form'>
+                <div className='form-names'>
+                  <label htmlFor='firstName' className='first-name'>
+                    First Name
+                    <input type='text' name='firstName' id='firstName' />
+                  </label>
+                  <label htmlFor='lastName' className='last-name'>
+                    Last Name
+                    <input type='text' name='lastName' id='lastName' />
+                  </label>
+                </div>
                 <label htmlFor='email'>
-                  <input
-                    type='email'
-                    name='email'
-                    id='email'
-                    placeholder='Email'
-                  />
+                  Email
+                  <input type='email' name='email' id='email' />
                 </label>
                 <label htmlFor='emailConfirmation'>
+                  Email Confirmation
                   <input
                     type='email'
                     name='emailConfirmation'
                     id='emailConfirmation'
-                    placeholder='Email Confirmation'
                   />
                 </label>
                 <label htmlFor='password'>
-                  <input
-                    type='password'
-                    name='password'
-                    id='password'
-                    placeholder='Password'
-                  />
-                  <input
-                    type='checkbox'
-                    name='showPassword'
-                    id='showPassword'
-                  />
+                  Password
+                  <input type='password' name='password' id='password' />
+                  <p>
+                    (at least 12 characters, with at least one uppercase letter,
+                    one lowercase letter, one number, and one special character)
+                  </p>
                 </label>
+                <input type='submit' value='Sign Up' />
                 <p>
-                  (at least 12 characters, with at least one uppercase letter,
-                  one lowercase letter, one number, and one special character)
+                  This site is protected by reCAPTCHA Enterprise and the Google{' '}
+                  <a>Privacy Policy</a> and <a>Terms of Service</a> apply.
                 </p>
-                <button type='submit'>Sign Up</button>
-                <p>
-                  This site is protected by reCAPTCHA Enterprise and the Google
-                  Privacy Policy and Terms of Service apply.
-                </p>
-                <div className='check-box'>
+                <div className='checkbox-container'>
                   <input type='checkbox' name='newsletter' id='newsletter' />
                   <p>
                     Yes, send me exclusive offers, promotions, news, reviews,
                     and personalized tips for buying and selling on Reverb.
                   </p>
                 </div>
-                <div>
+                <div className='checkbox-container'>
                   <input type='checkbox' name='terms' id='terms' />
                   <p>
                     By clicking Sign Up, I expressly agree to accept Reverb’s
-                    Terms of Use and Privacy Policy <strong>REQUIRED</strong>.
+                    <a>Terms of Use</a> and <a>Privacy Policy</a>{' '}
+                    <strong>REQUIRED</strong>.
                   </p>
                 </div>
               </form>
@@ -136,14 +110,26 @@ export default function Auth({ isLogin, setIsLogin }) {
                 Forgot your password?<a href='#'> Reset it</a>
               </p>
             )}
-            <div className='or-divider'>
-              <hr />
-              <p>or</p>
-              <hr />
-            </div>
-            <button>{isLogin ? 'Sign Up' : 'Log In'} with Google</button>
-            <button>{isLogin ? 'Sign Up' : 'Log In'} with Apple</button>
-            <button>{isLogin ? 'Sign Up' : 'Log In'} with Facebook</button>
+            <p className='divider'>
+              <span>OR</span>
+            </p>
+            <button className='auth__social-login '>
+              <img
+                className='auth__social-login-icon'
+                style={{ width: '20px', height: '20px' }}
+                src={GoogleIcon}
+                alt='Google Logo'
+              />
+              {isLogin ? 'Log In' : 'Sign Up'} with Google
+            </button>
+            <button className='auth__social-login '>
+              <SiApple className='auth__social-login-icon' />
+              {isLogin ? 'Log In' : 'Sign Up'} with Apple
+            </button>
+            <button className='auth__social-login auth__social-login--facebook'>
+              <FaFacebook className='auth__social-login-icon' />
+              {isLogin ? 'Log In' : 'Sign Up'} with Facebook
+            </button>
           </section>
         </div>
       </Modal>

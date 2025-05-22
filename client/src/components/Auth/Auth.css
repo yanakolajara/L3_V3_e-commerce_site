@@ -1,6 +1,7 @@
 .auth-modal {
   width: 540px;
   min-height: 635px;
+  max-height: 85vh;
   border-radius: 15px;
 }
 
@@ -40,7 +41,7 @@
   padding: 20px;
 }
 
-.auth-body form {
+.auth-form {
   display: flex;
   margin-top: 20px;
   flex-direction: column;
@@ -48,23 +49,44 @@
   width: 100%;
 }
 
-.auth-body form label {
+.auth-form label {
   display: flex;
   flex-direction: column;
   gap: 5px;
-  width: 100%;
+  font-weight: bold;
 }
 
-.auth-body form input[type='email'],
-.auth-body form input[type='password'],
-.auth-body form input[type='text'] {
-  border: 1px solid rgba(0, 0, 0, 1);
-  border-radius: 6px;
-  padding: 15px;
+.auth-form p {
+  font-weight: lighter;
+  color: gray;
+}
+
+.auth-form a {
+  cursor: pointer;
+  color: #3370ff;
+}
+
+.form-names {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
   flex: 1;
 }
 
-.auth-body form input[type='submit'] {
+.first-name,
+.last-name {
+  flex: 1;
+}
+
+.auth-form input[type='email'],
+.auth-form input[type='password'],
+.auth-form input[type='text'] {
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 6px;
+  padding: 15px;
+}
+
+.auth-form input[type='submit'] {
   background-color: #212121;
   color: white;
   border: 0;
@@ -76,4 +98,49 @@
 
 .auth-body form input[type='submit']:hover {
   background-color: #000000;
+}
+
+.auth-body .checkbox-container {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.auth-body .checkbox-container input[type='checkbox'] {
+  width: 20px;
+  height: 20px;
+}
+
+.divider {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #212121;
+  line-height: 0.1em;
+  margin: 15px 0 20px;
+}
+
+.divider span {
+  font-weight: lighter;
+  background: #fff;
+  padding: 0 10px;
+}
+
+.auth__social-login {
+  color: #212121;
+  border: 0;
+  border-radius: 25px;
+  padding: 15px;
+  font-size: medium;
+  font-weight: bold;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.auth__social-login-icon {
+  margin-right: 10px;
+}
+
+.auth__social-login--facebook {
+  background-color: #3b5998;
+  color: white;
 }
