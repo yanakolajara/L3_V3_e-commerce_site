@@ -1,14 +1,16 @@
 import React from 'react';
 import Modal from '../Modal/Modal';
 import { useModal } from '../../providers/modalProvider';
+import { FORM_FIELDS } from './formFields';
+import { FormInput } from './FormInput';
 import { FaFacebook } from 'react-icons/fa';
 import { SiApple } from 'react-icons/si';
 import GoogleIcon from '../../assets/google-icon.png';
 import './Auth.css';
+import { Form } from './Form';
 
 export default function Auth({ isLogin, setIsLogin }) {
   const { isOpen, closeModal } = useModal();
-
   const changeAuthType = (e) => {
     e.preventDefault();
     setIsLogin(e.target.textContent === 'Log In');
@@ -35,76 +37,22 @@ export default function Auth({ isLogin, setIsLogin }) {
             <h2 className='auth-title'>
               {isLogin ? 'Log In to Reverb' : 'Create a Reverb Account'}
             </h2>
-            {isLogin ? (
-              <form className='auth-form'>
-                <label htmlFor='email'>
-                  Email
-                  <input type='email' name='email' id='email' />
-                </label>
-                <label htmlFor='password'>
-                  Password
-                  <input type='password' name='password' id='password' />
-                </label>
-                <input type='submit' value='Log In' />
-                <div className='checkbox'>
-                  <input type='checkbox' name='remember' id='remember' />
-                  <p>Stay signed in</p>
-                </div>
-              </form>
-            ) : (
-              <form className='auth-form'>
-                <div className='form-names'>
-                  <label htmlFor='firstName' className='first-name'>
-                    First Name
-                    <input type='text' name='firstName' id='firstName' />
-                  </label>
-                  <label htmlFor='lastName' className='last-name'>
-                    Last Name
-                    <input type='text' name='lastName' id='lastName' />
-                  </label>
-                </div>
-                <label htmlFor='email'>
-                  Email
-                  <input type='email' name='email' id='email' />
-                </label>
-                <label htmlFor='emailConfirmation'>
-                  Email Confirmation
-                  <input
-                    type='email'
-                    name='emailConfirmation'
-                    id='emailConfirmation'
-                  />
-                </label>
-                <label htmlFor='password'>
-                  Password
-                  <input type='password' name='password' id='password' />
-                  <p>
-                    (at least 12 characters, with at least one uppercase letter,
-                    one lowercase letter, one number, and one special character)
-                  </p>
-                </label>
-                <input type='submit' value='Sign Up' />
-                <p>
-                  This site is protected by reCAPTCHA Enterprise and the Google{' '}
-                  <a>Privacy Policy</a> and <a>Terms of Service</a> apply.
-                </p>
-                <div className='checkbox-container'>
-                  <input type='checkbox' name='newsletter' id='newsletter' />
-                  <p>
-                    Yes, send me exclusive offers, promotions, news, reviews,
-                    and personalized tips for buying and selling on Reverb.
-                  </p>
-                </div>
-                <div className='checkbox-container'>
-                  <input type='checkbox' name='terms' id='terms' />
-                  <p>
-                    By clicking Sign Up, I expressly agree to accept Reverb’s
-                    <a>Terms of Use</a> and <a>Privacy Policy</a>{' '}
-                    <strong>REQUIRED</strong>.
-                  </p>
-                </div>
-              </form>
-            )}
+            <form className='auth-form'>
+              {isLogin
+                ? FORM_FIELDS.LOGIN.map((field) => (
+                    <FormInput key={field.name} field={field} />
+                  ))
+                : FORM_FIELDS.SIGNUP.map((field) => (
+                    <FormInput key={field.name} field={field} />
+                  ))}
+              <Form.Submit className='auth-form__submit lg'>
+                {isLogin ? 'Log In' : 'Sign Up'}
+              </Form.Submit>
+              <div className='checkbox-container'>
+                <input type='checkbox' name='staySignedIn' />
+                <label htmlFor='staySignedIn'>Stay signed in</label>
+              </div>
+            </form>
             {isLogin && (
               <p>
                 Forgot your password?<a href='#'> Reset it</a>

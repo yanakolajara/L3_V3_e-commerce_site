@@ -1,10 +1,11 @@
-package com.reverbclone.service;
+package com.reverbclone.reverbclone.service;
 
-import com.reverbclone.model.User;
-import com.reverbclone.repository.UserRepository;
+import com.reverbclone.reverbclone.model.User;
+import com.reverbclone.reverbclone.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+//import java.util.List;
 
 @Service
 public class UserService {
@@ -18,7 +19,7 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public Optional<User> getByEmail(String email) {
-        return userRepository.findByEmail(email);
+    public Optional<User> getUserById(Long id) {
+        return userRepository.findById(id);
     }
 }
