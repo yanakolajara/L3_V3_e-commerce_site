@@ -27,4 +27,16 @@ public class UserController {
         return user.map(ResponseEntity::ok).orElseGet(() -> ResponseEntity.notFound().build());
     }
 
+    @GetMapping
+    public ResponseEntity<User> getUserByEmail(@RequestParam String email) {
+        return userService.getUserByEmail(email)
+                .map(user -> ResponseEntity.ok(user))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
+        return userService.updateUser(user) != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+    }
+
 }
