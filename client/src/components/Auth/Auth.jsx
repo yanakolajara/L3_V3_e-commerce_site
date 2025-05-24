@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Modal from '../Modal/Modal';
 import { useModal } from '../../providers/modalProvider';
 import { FORM_FIELDS } from './formFields';
@@ -11,6 +11,24 @@ import { Form } from './Form';
 
 export default function Auth({ isLogin, setIsLogin }) {
   const { isOpen, closeModal } = useModal();
+  const [data, setData] = useState({
+    email: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    confirmEmail: '',
+  });
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    console.log(data);
+  };
+
+  const handleInputChange = (e) => {
+    e.preventDefault();
+    const { name, value } = e.target;
+    setData({ ...data, [name]: value });
+  };
   const changeAuthType = (e) => {
     e.preventDefault();
     setIsLogin(e.target.textContent === 'Log In');
@@ -37,13 +55,23 @@ export default function Auth({ isLogin, setIsLogin }) {
             <h2 className='auth-title'>
               {isLogin ? 'Log In to Reverb' : 'Create a Reverb Account'}
             </h2>
-            <form className='auth-form'>
+            <form className='auth-form' onSubmit={handleFormSubmit}>
               {isLogin
                 ? FORM_FIELDS.LOGIN.map((field) => (
-                    <FormInput key={field.name} field={field} />
+                    <FormInput
+                      key={field.name}
+                      field={field}
+                      onChange={handleInputChange}
+                      value={data[field.name]}
+                    />
                   ))
                 : FORM_FIELDS.SIGNUP.map((field) => (
-                    <FormInput key={field.name} field={field} />
+                    <FormInput
+                      key={field.name}
+                      field={field}
+                      onChange={handleInputChange}
+                      value={data[field.name]}
+                    />
                   ))}
               <Form.Submit className='auth-form__submit lg'>
                 {isLogin ? 'Log In' : 'Sign Up'}
