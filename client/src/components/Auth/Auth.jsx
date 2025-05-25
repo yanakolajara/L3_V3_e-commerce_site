@@ -23,11 +23,15 @@ export default function Auth({ isLogin, setIsLogin }) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    console.log(data);
+    const body = {
+      ...data,
+      first_name: data.firstName,
+      last_name: data.lastName,
+    };
     if (isLogin) {
-      login(data);
+      login(body);
     } else {
-      register(data);
+      register(body);
     }
   };
 

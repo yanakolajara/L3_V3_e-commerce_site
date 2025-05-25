@@ -2,6 +2,7 @@ package com.reverbclone.reverbclone.controller;
 
 import com.reverbclone.reverbclone.model.User;
 import com.reverbclone.reverbclone.service.UserService;
+import org.apache.coyote.Response;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -38,6 +39,12 @@ public class UserController {
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User user) {
         return userService.updateUser(user) != null ? ResponseEntity.ok(user) : ResponseEntity.notFound().build();
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<User> deleteUser(@PathVariable Long id){
+        userService.deleteUser(id);
+        return ResponseEntity.ok().build();
     }
 
 }

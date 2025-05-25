@@ -32,4 +32,7 @@ public class UserService {
     // Edits a user
     public User updateUser(User user) { return userRepository.save(user); }
 
+    // Deletes a user
+    public void deleteUser(Long id) { userRepository.deleteById(id); }
+
 }
