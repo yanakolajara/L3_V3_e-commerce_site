@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Modal from '../Modal/Modal';
 import { useModal } from '../../providers/modalProvider';
 import { FORM_FIELDS } from './formFields';
@@ -8,9 +8,11 @@ import { SiApple } from 'react-icons/si';
 import GoogleIcon from '../../assets/google-icon.png';
 import './Auth.css';
 import { Form } from './Form';
+import { useAuthContext } from '../../providers/authProvider';
 
 export default function Auth({ isLogin, setIsLogin }) {
   const { isOpen, closeModal } = useModal();
+  const { register, login } = useAuthContext();
   const [data, setData] = useState({
     email: '',
     password: '',
@@ -22,6 +24,11 @@ export default function Auth({ isLogin, setIsLogin }) {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     console.log(data);
+    if (isLogin) {
+      login(data);
+    } else {
+      register(data);
+    }
   };
 
   const handleInputChange = (e) => {
@@ -33,6 +40,8 @@ export default function Auth({ isLogin, setIsLogin }) {
     e.preventDefault();
     setIsLogin(e.target.textContent === 'Log In');
   };
+
+  useEffect(() => {}, [data]);
   return (
     <>
       <Modal isOpen={isOpen} closeModal={closeModal}>

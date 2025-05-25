@@ -23,14 +23,14 @@ const AuthProvider = ({ children }) => {
 
   const register = async (data) => {
     return await trycatchHandler(() => {
-      const res = axiosInstance.post('/users/register', data);
+      const res = axiosInstance.post('/api/users', data);
       return res;
     });
   };
 
   const login = async (data) => {
     return await trycatchHandler(async () => {
-      const res = await axiosInstance.post('/users/login', data);
+      const res = await axiosInstance.post('/api/users/login', data);
       setUser(res.data.user);
 
       // Store token in localStorage as backup for cookie auth
@@ -60,7 +60,7 @@ const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     return await trycatchHandler(async () => {
-      const res = await axiosInstance.post('/users/logout');
+      const res = await axiosInstance.post('/api/users/logout');
       setUser(null);
       return res;
     });
@@ -68,25 +68,25 @@ const AuthProvider = ({ children }) => {
 
   const verify = async (data) => {
     return await trycatchHandler(async () => {
-      return await axiosInstance.post('/users/verify', data);
+      return await axiosInstance.post('/api/users/verify', data);
     });
   };
 
   const resendCode = async (data) => {
     return await trycatchHandler(async () => {
-      return await axiosInstance.post('/users/resend-code', data);
+      return await axiosInstance.post('/api/users/resend-code', data);
     });
   };
 
   const verifyEmail = async (data) => {
     return await trycatchHandler(async () => {
-      return await axiosInstance.post('/users/verify-email', data);
+      return await axiosInstance.post('/api/users/verify-email', data);
     });
   };
 
   const checkAuth = async () => {
     return await trycatchHandler(async () => {
-      const res = await axiosInstance.get('/users/check-auth');
+      const res = await axiosInstance.get('/api/users/check-auth');
       setUser(res.data.user);
     });
   };
