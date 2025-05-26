@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Cta } from '../components/Cta/Cta';
-import imagePlaceholder from '../assets/image-placeholder.svg';
 import './Home.css';
+import Hero from './components/Hero';
 
 export default function Home() {
   const [mostWatchedProducts, setMostWatchedProducts] = useState([]);
@@ -9,34 +9,7 @@ export default function Home() {
 
   return (
     <main className='home'>
-      <section className='home__hero'>
-        <article className='home__hero-content'>
-          <h2 className='home__hero-title'>Save up to 66% off now</h2>
-          <p className='home__hero-subtitle'>Memorial Day sales are here</p>
-          <button className='home__hero-button'>Shop the sales</button>
-        </article>
-        <article className='home__hero-cards'>
-          <section className='home__hero-card'>
-            <img src={imagePlaceholder} alt='promo-card-image' />
-            <article className='home__hero-card__text'>
-              <p>promo text</p>
-            </article>
-          </section>
-          <section className='home__hero-card'>
-            <img src={imagePlaceholder} alt='promo-card-image' />
-            <article className='home__hero-card__text'>
-              <p>promo text</p>
-            </article>
-          </section>
-          <section className='home__hero-card'>
-            <img src={imagePlaceholder} ralt='promo-card-image' />
-            <article className='home__hero-card__text'>
-              <p>promo text</p>
-            </article>
-          </section>
-        </article>
-      </section>
-
+      <Hero />
       <section className='home__brands'>
         <h3>Save an average of 30% on top brands by buying used</h3>
         <section className='home__brands__brand-cards'>
