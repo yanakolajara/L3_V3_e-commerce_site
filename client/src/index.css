@@ -18,3 +18,11 @@ button {
 input[type='submit'] {
   cursor: pointer;
 }
+
+/* variables */
+
+:root {
+  --primary-color: #ff8133;
+  --secondary-color: #212121;
+  --gray-color: #f5f5f5;
+}
