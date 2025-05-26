@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Cta } from '../Cta/Cta';
 import { VscSearch } from 'react-icons/vsc';
 import { FaRegHeart } from 'react-icons/fa';
@@ -6,8 +6,13 @@ import { LuShoppingCart } from 'react-icons/lu';
 
 import './Navbar.css';
 import logo from '../../assets/ReverbLogo.svg';
+import { useModal } from '../../providers/modalProvider';
+import Auth from '../Auth/Auth';
 
 export function Navbar() {
+  const { openModal } = useModal();
+  const [isLogin, setIsLogin] = useState(true);
+
   return (
     <nav className='navbar'>
       <div className='navbar-logo'>
@@ -24,7 +29,13 @@ export function Navbar() {
         </form>
       </div>
       <div className='navbar-options'>
-        <Cta border borderColor='black' borderWidth='3px' borderRadius='25px'>
+        <Cta
+          border
+          borderColor='black'
+          borderWidth='3px'
+          borderRadius='25px'
+          size='md'
+        >
           Sell Your Gear
         </Cta>
         <button
@@ -59,12 +70,27 @@ export function Navbar() {
           Cart
         </button>
 
-        <Cta href='/signup' size='sm'>
+        <Cta
+          className='navbar-options__sign-up'
+          size='sm'
+          onClick={(e) => {
+            openModal(e);
+            setIsLogin(false);
+          }}
+        >
           Sign Up
         </Cta>
-        <Cta href='/login' size='sm'>
+        <Cta
+          className='navbar-options__log-in'
+          size='sm'
+          onClick={(e) => {
+            openModal(e);
+            setIsLogin(true);
+          }}
+        >
           Log In
         </Cta>
+        <Auth isLogin={isLogin} setIsLogin={setIsLogin} />
       </div>
     </nav>
   );

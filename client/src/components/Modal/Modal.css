@@ -1,0 +1,50 @@
+.modal__background {
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 9;
+}
+
+.modal__container {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  z-index: 10;
+  padding: 0px;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 15px;
+  overflow: hidden;
+  overflow-y: auto;
+  scrollbar-color: rgba(0, 0, 0, 0.2) rgba(0, 0, 0, 0);
+  scrollbar-width: thin;
+}
+
+.modal__controls {
+  display: flex;
+  position: absolute;
+  right: 0;
+  padding: 0px 10px;
+}
+
+.modal__close:after {
+  display: inline-block;
+  content: '\00d7';
+}
+
+.modal__close {
+  border: none;
+  background-color: transparent;
+  font-size: 36px;
+  cursor: pointer;
+}
