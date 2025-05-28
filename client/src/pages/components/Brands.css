@@ -7,11 +7,6 @@
   gap: 30px;
 }
 
-.home__brands-title {
-  font-size: 1.6em;
-  font-weight: bold;
-}
-
 .home__brands-cards {
   width: 1200px;
   display: flex;

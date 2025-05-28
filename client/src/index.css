@@ -19,10 +19,20 @@ input[type='submit'] {
   cursor: pointer;
 }
 
+h3 {
+  font-weight: 600;
+  font-size: 28px;
+}
+
 /* variables */
 
 :root {
   --primary-color: #ff8133;
   --secondary-color: #212121;
   --gray-color: #f5f5f5;
+
+  --gap-size: 20px;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-lg: 15px;
 }
