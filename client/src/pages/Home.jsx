@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Cta } from '../components/Cta/Cta';
 import './Home.css';
 import Hero from './components/Hero';
+import Brands from './components/Brands';
 
 export default function Home() {
   const [mostWatchedProducts, setMostWatchedProducts] = useState([]);
@@ -10,31 +11,7 @@ export default function Home() {
   return (
     <main className='home'>
       <Hero />
-      <section className='home__brands'>
-        <h3 className='home__brands-title'>
-          Save an average of 30% on top brands by buying used
-        </h3>
-        <section className='home__brands-cards'>
-          {BRAND_CARDS.map((card) => {
-            return (
-              <article className='home__brands-card'>
-                <img src={card.image} alt={card.name} />
-              </article>
-            );
-          })}
-          <article className='home__brands__brand-card'>
-            <div
-              className='home__brands__brand-card__background'
-              // style={{ backgroundImage }}
-            />
-            <div
-              className='home__brands__brand-card__logo'
-              // style={{ backgroundImage: logoImage }}
-            />
-          </article>
-        </section>
-      </section>
-
+      <Brands />
       <section className='home__most-watched'>
         <h3>Most Watched music gear</h3>
         <Cta>See more →</Cta>
@@ -138,34 +115,3 @@ export default function Home() {
 }
 
 // todo: create generic cards with props styles
-
-const BRAND_CARDS = [
-  {
-    id: 1,
-    name: 'Gibson',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fvqs50rm6qlqquoizhakm',
-    link: '',
-  },
-  {
-    id: 2,
-    name: 'Fender',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsbskyljj4bvzhtdqqoly',
-    link: '',
-  },
-  {
-    id: 3,
-    name: 'Ibanez',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsrahoqhkhtsjknlbb0bz',
-    link: '',
-  },
-  {
-    id: 4,
-    name: 'Yamaha',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
-    link: '',
-  },
-];
