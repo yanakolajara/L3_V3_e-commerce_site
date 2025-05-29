@@ -4,6 +4,7 @@ import './Home.css';
 import Hero from './components/Hero';
 import Brands from './components/Brands';
 import MostWatched from './components/MostWatched';
+import TrendingSearches from './components/TrendingSearches';
 
 export default function Home() {
   const [mostWatched, setMostWatched] = useState([]);
@@ -20,28 +21,17 @@ export default function Home() {
         setMostWatched={setMostWatched}
       />
 
-      <section className='home__trending-searches'>
-        <h2>Trending searches</h2>
-        <section className='home__trending-searches__cards'>
-          {/* // todo show 3 cards 
-          - 2 images
-          - header light
-          - text on header
-          - text dark */}
-        </section>
-      </section>
+      <TrendingSearches />
 
       <section className='home__hot-deals'>
-        <h2>
-          Hot deals this week
-          <section className='home__hot-deals__cards'>
-            {/* // todo: show 11 cards 
+        <h2>Hot deals this week</h2>
+        <section className='home__hot-deals__cards'>
+          {/* // todo: show 11 cards 
             - image on top
             - padding 10px
             - text on bottom
             - fav button on image (right-top)  */}
-          </section>
-        </h2>
+        </section>
       </section>
 
       <section className='home__just-listed'>

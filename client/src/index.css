@@ -1,5 +1,6 @@
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif;
 }
 
 a {
@@ -34,4 +35,7 @@ h3 {
   --shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   --gap-cards: 20px;
   --transition: all 0.2s ease;
+  --text-padding-lg: 16px;
+  --text-padding-md: 12px;
+  --text-padding-sm: 8px;
 }
