@@ -3,39 +3,22 @@ import { Cta } from '../components/Cta/Cta';
 import './Home.css';
 import Hero from './components/Hero';
 import Brands from './components/Brands';
+import MostWatched from './components/MostWatched';
 
 export default function Home() {
-  const [mostWatchedProducts, setMostWatchedProducts] = useState([]);
-  const [bestSellingProducts, setBestSellingProducts] = useState([]);
+  const [mostWatched, setMostWatched] = useState([]);
+  const [bestSelling, setBestSelling] = useState([]);
 
   return (
     <main className='home'>
       <Hero />
       <Brands />
-      <section className='home__most-watched'>
-        <h3>Most Watched music gear</h3>
-        <Cta>See more →</Cta>
-        <section className='home__most-watched__products'>
-          {mostWatchedProducts.map((product) => {
-            const backgroundImage = product.image
-              ? `url(${product.image})`
-              : '';
-            return (
-              <article
-                className='home__most-watched__product'
-                key={product.id}
-                style={{ backgroundImage }}
-              >
-                <button className='home__most-watched__product__favorite'></button>
-                <div className='home__most-watched__product__info'>
-                  <p>{product.price}</p>
-                  <p>{product.title}</p>
-                </div>
-              </article>
-            );
-          })}
-        </section>
-      </section>
+
+      <MostWatched
+        Cta={Cta}
+        mostWatched={mostWatched}
+        setMostWatched={setMostWatched}
+      />
 
       <section className='home__trending-searches'>
         <h2>Trending searches</h2>
