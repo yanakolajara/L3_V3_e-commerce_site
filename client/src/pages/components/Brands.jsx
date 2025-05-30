@@ -73,46 +73,46 @@ const BRAND_CARDS = [
       'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fvlz7cdvb99n1rac0xxgq',
     link: '',
   },
-  {
-    id: 5,
-    name: 'MXR',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fvf4bfnpwuwvrdm9nbnvq',
-    link: '',
-  },
-  {
-    id: 4,
-    name: 'Yamaha',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
-    link: '',
-  },
-  {
-    id: 3,
-    name: 'Ibanez',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsrahoqhkhtsjknlbb0bz',
-    link: '',
-  },
-  {
-    id: 4,
-    name: 'Moog',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
-    link: '',
-  },
-  {
-    id: 4,
-    name: 'Roland',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
-    link: '',
-  },
-  {
-    id: 4,
-    name: 'Epiphone',
-    image:
-      'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
-    link: '',
-  },
+  // {
+  //   id: 5,
+  //   name: 'MXR',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fvf4bfnpwuwvrdm9nbnvq',
+  //   link: '',
+  // },
+  // {
+  //   id: 4,
+  //   name: 'Yamaha',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
+  //   link: '',
+  // },
+  // {
+  //   id: 3,
+  //   name: 'Ibanez',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsrahoqhkhtsjknlbb0bz',
+  //   link: '',
+  // },
+  // {
+  //   id: 4,
+  //   name: 'Moog',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
+  //   link: '',
+  // },
+  // {
+  //   id: 4,
+  //   name: 'Roland',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
+  //   link: '',
+  // },
+  // {
+  //   id: 4,
+  //   name: 'Epiphone',
+  //   image:
+  //     'https://res.cloudinary.com/reverb-cms/image/upload/curation%2Fsi1y0kzivyt7sqky8rrs',
+  //   link: '',
+  // },
 ];

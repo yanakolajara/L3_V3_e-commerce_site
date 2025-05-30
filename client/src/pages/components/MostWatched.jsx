@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { FaRegHeart } from 'react-icons/fa';
 import './MostWatched.css';
+import { PiHeartStraight } from 'react-icons/pi';
 
 const Card = ({ product }) => {
   const { image, title, price, discount } = product;
@@ -11,9 +12,12 @@ const Card = ({ product }) => {
     <div className='product-card'>
       <div className='product-image-container'>
         <img src={image} alt={title} className='product-image' />
-        <button className='favorite-button' aria-label='Add to favorites'>
-          <FaRegHeart className='heart-icon' />
+        <button className='product-card-watchlist-button'>
+          <PiHeartStraight className='product-card-watchlist-button__icon' />
         </button>
+        {/* <button className='favorite-button' aria-label='Add to favorites'>
+          <FaRegHeart className='heart-icon' />
+        </button> */}
       </div>
       <div className='product-info'>
         <div className='product-price'>
