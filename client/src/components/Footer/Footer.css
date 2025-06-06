@@ -1,0 +1,90 @@
+.footer {
+  color: #fff;
+  width: 100%;
+}
+
+.footer p {
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+.footer h4 {
+  color: #fff;
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.footer a:link {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.footer a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40px 80px;
+  background-color: rgb(33, 33, 33);
+}
+
+.main-footer__section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 300px;
+}
+
+.main-footer__links a:hover {
+  text-decoration: underline;
+}
+
+.sub-footer {
+  padding: 40px 80px;
+  background-color: rgb(18, 18, 18);
+  /* color: #fff; */
+}
+
+.terms__text {
+  font-size: 0.8rem;
+  font-weight: 200;
+  color: rgb(180, 180, 180);
+}
+
+.newsletter h3 {
+  font-weight: 500;
+  margin-top: 12px;
+}
+
+.newsletter p {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.newsletter__form {
+  display: flex;
+  flex-direction: row;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: green;
+  /* padding:  ; */
+}
+.newsletter__form__input {
+  flex: 1;
+  padding: 0px 14px;
+}
+.newsletter__form__submit {
+  padding: 14px 26px;
+  background-color: #fff;
+  color: #000;
+  border-radius: 0px 8px 8px 0px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0;
+}
