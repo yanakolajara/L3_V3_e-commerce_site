@@ -28,6 +28,7 @@ export const Cta = ({
   borderRadius,
   size,
   color,
+  weight = 'normal',
   backgroundColor,
   onClick,
   href,
@@ -41,6 +42,7 @@ export const Cta = ({
     backgroundColor,
     fontSize: size === 'md' ? '16px' : '12px',
     padding: size === 'md' ? '10px 20px' : '5px 10px',
+    fontWeight: weight,
     cursor: 'pointer',
   };
   if (href) {

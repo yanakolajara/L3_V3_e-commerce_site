@@ -1,0 +1,54 @@
+.trending-searches {
+  display: flex;
+  flex-direction: column;
+  width: 90vw;
+  margin: 0 auto;
+  padding: 0px 16px;
+  gap: 16px;
+}
+
+.trending-searches-cards {
+  display: flex;
+  gap: var(--gap-cards);
+}
+
+.search-card {
+  border-radius: 16px;
+  border: 1px solid #e0e0e0;
+  flex: 1;
+  overflow: hidden;
+}
+
+.search-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--text-padding-md);
+  background-color: rgb(245, 245, 245);
+}
+.search-card-watchlist-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: none;
+  cursor: pointer;
+  background-color: white;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.search-card-watchlist-button__icon {
+  width: 24px;
+  height: 24px;
+  stroke: var(--secondary-color);
+}
+
+.search-card-images {
+  display: flex;
+}
+
+.search-card-images img {
+  width: 50%;
+}

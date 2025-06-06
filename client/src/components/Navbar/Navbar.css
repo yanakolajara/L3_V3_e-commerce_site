@@ -1,4 +1,7 @@
 .navbar {
+}
+
+.navbar-main {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -52,4 +55,62 @@
 
 .navbar-options__log-in {
   background-color: none;
+}
+
+.navbar-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0px 5vw;
+  font-size: 14px;
+  font-weight: 300;
+}
+.navbar-menu a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  padding: 10px 0px;
+}
+
+.navbar-menu a span {
+  color: var(--primary-color);
+}
+
+.navbar-menu a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+}
+
+.navbar-menu__categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 22px;
+}
+
+/* .navbar-menu__categories a {
+  text-decoration: none;
+  color: var(--secondary-color);
+}
+
+.navbar-menu__categories a span {
+  color: var(--primary-color);
+}
+
+.navbar-menu__categories a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+} */
+
+.navbar-menu__subcategories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0px 10px;
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
 }
