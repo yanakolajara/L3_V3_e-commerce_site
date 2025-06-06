@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Brands from './components/Brands';
 import MostWatched from './components/MostWatched';
 import TrendingSearches from './components/TrendingSearches';
+import HotDeals from './components/HotDeals';
 
 export default function Home() {
   const [mostWatched, setMostWatched] = useState([]);
@@ -22,17 +23,7 @@ export default function Home() {
       />
 
       <TrendingSearches />
-
-      <section className='home__hot-deals'>
-        <h2>Hot deals this week</h2>
-        <section className='home__hot-deals__cards'>
-          {/* // todo: show 11 cards 
-            - image on top
-            - padding 10px
-            - text on bottom
-            - fav button on image (right-top)  */}
-        </section>
-      </section>
+      <HotDeals />
 
       <section className='home__just-listed'>
         <h2>
